@@ -1,0 +1,308 @@
+/* ======================================= */
+/* ====== 1. ОБЩИЕ СТИЛІ И СБРОС СТИЛЕЙ ====== */
+/* ======================================= */
+body {
+ font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. СТИЛИ ШАПКИ (Header) --- */
+.header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #797979; 
+    font-size: 16px;
+    padding: 5px 0;
+    cursor: default; 
+    outline: none; 
+    user-select: none; 
+    border-bottom: 2px solid transparent; 
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.nav-link.current {
+    color: #4b4b4b; 
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #4a689d; 
+    border-bottom-color: #4a689d; 
+}
+/* Профіль користувача в шапці */
+.user-profile {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.action-link-icon {
+    text-decoration: none; 
+    color: #797979; 
+    padding-right: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.action-icon-img {
+    width: 20px;
+    height: 20px;
+    filter: invert(30%) sepia(50%) saturate(100%) hue-rotate(200deg); 
+}
+
+.user-avatar-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc; 
+}
+
+/* ----------------------------------- */
+/* ====== 2. СТИЛИ КАБИНЕТА МОДЕРАТОРА ====== */
+/* ----------------------------------- */
+
+.main-content {
+    padding-top: 30px;
+}
+
+.cabinet-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+}
+
+.cabinet-tabs {
+    flex-grow: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.mod-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.mod-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* --- СТИЛИ БОКОВОГО МЕНЮ АДМИНА --- */
+
+.sidebar {
+    flex: 0 0 250px; 
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cabinet-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+/* Иконки в меню */
+.menu-icon-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: filter 0.3s;
+    flex-shrink: 0;
+}
+
+/* Активная вкладка */
+.tab-link.active {
+    background-color: #e6e6fa; 
+    color: #4F46E5;
+    border-radius: 8px; 
+    margin: 5px 10px; 
+    padding-left: 15px;
+}
+
+/* Динамическая стилизация иконки */
+.tab-link:not(.active) .menu-icon-img {
+    filter: grayscale(100%) brightness(0.5); /* Серый для неактивных */
+}
+
+.tab-link.active .menu-icon-img {
+    /* ФИКС: ФИЛЬТР ДЛЯ ПОЛУЧЕНИЯ #4F46E5 */
+    filter: invert(27%) sepia(85%) saturate(2200%) hue-rotate(240deg) brightness(1.1);
+}
+
+/* Стиль для скрытого/видимого контента (для JS) */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ----------------------------------- */
+/* ====== 3. СТИЛИ КАРТОЧЕК МОДЕРАЦИИ ====== */
+/* ----------------------------------- */
+
+.moderation-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+
+/* Детали пользователя */
+.user-details-mod {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.user-avatar-mod {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.mod-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mod-name {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.mod-ip-reason {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Карточка события: используется на вкладке Модерация событий */
+.event-moderation-card {
+    align-items: center; 
+    flex-direction: row; 
+}
+
+.event-mod-details {
+    flex-grow: 1; 
+    margin-right: 20px;
+}
+
+.event-mod-forum {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.event-mod-organizer {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* Кнопки действий */
+.mod-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.mod-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-mod-reject {
+    background-color: #ff4d4f; /* Красный */
+    color: white;
+}
+
+.btn-mod-approve {
+    background-color: #52c41a; /* Зеленый */
+    color: white;
+}
+
+/* --------------------------------- */
+/* --- 4. СТИЛИ ПОДВАЛА (FOOTER) --- */
+/* --------------------------------- */
+.footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: auto; 
+}

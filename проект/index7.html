@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій кабінет: Організатор</title>
+    <link rel="stylesheet" href="styles/styles5.css"> 
+    <script src="scripts/script3.js" defer></script> 
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="index6.html" class="logo">ДоброДій</a> 
+            
+            <nav class="main-nav">
+                <a href="index6.html" class="nav-link">Каталог подій</a> 
+                <a href="#" class="nav-link current">Мій кабінет</a>
+            </nav>
+            
+            <div class="user-profile"> 
+                <a href="index.html" class="action-link-icon" title="Вихід">
+                    <img src="img/вихід.png" class="action-icon-img" alt="Вихід">
+                </a> 
+                <span class="username">Організатор</span>
+                <div class="user-avatar-small"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container cabinet-layout">
+            
+            <aside class="sidebar">
+                <nav class="cabinet-nav">
+                    <a href="#" class="tab-link active" data-tab="stats">
+                        <img src="img/статистика.png" class="tab-icon" alt="Статистика">Статистика
+                    </a>
+                    <a href="#" class="tab-link" data-tab="management">
+                        <img src="img/редагування.png" class="tab-icon" alt="Керування">Керування подіями
+                    </a>
+                    <a href="#" class="tab-link" data-tab="create">
+                        <img src="img/плюсик.png" class="tab-icon" alt="Створити">Створити подію
+                    </a>
+                </nav>
+            </aside>
+
+            <div class="cabinet-tabs">
+                
+                <div id="stats" class="tab-content active">
+                    <h2>Статистика</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon-container">
+                                <img src="img/документ.png" class="stat-icon-img" alt="Всього подій">
+                            </div>
+                            <span class="stat-label">Всього подій</span>
+                            <span class="stat-value">5</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-container">
+                                <img src="img/люди.png" class="stat-icon-img" alt="Залучено волонтерів">
+                            </div>
+                            <span class="stat-label">Залучено волонтерів</span>
+                            <span class="stat-value">120</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-container">
+                                <img src="img/зірочка.png" class="stat-icon-img" alt="Середній рейтинг">
+                            </div>
+                            <span class="stat-label">Середній рейтинг</span>
+                            <span class="stat-value">4/5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-details">
+                        <p class="stat-detail-header">Місія</p>
+                        <p class="stat-detail-text">"Назва події — забезпечення чистоти багатьох територій "Назва..."</p>
+                    </div>
+                    
+                    <div class="stat-reviews">
+                        <p class="stat-detail-header">Відгуки про останні події</p>
+                        
+                        <div class="review-card">
+                            <div class="review-avatar"></div>
+                            <div class="review-content">
+                                <span class="review-name">Марина А</span>
+                                <p class="review-text">"Все було чудово організовано!"</p>
+                            </div>
+                            <span class="review-rating">5/5</span>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-avatar"></div>
+                            <div class="review-content">
+                                <span class="review-name">Марина Б</span>
+                                <p class="review-text">"Бракувало питної води, але в цілому добре."</p>
+                            </div>
+                            <span class="review-rating">3/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="management" class="tab-content">
+                    <h2>Керування подіями</h2>
+                    <div class="event-management-card">
+                        <div class="event-info-management">
+                            <h3 class="management-title">Назва події 1</h3>
+                            <p class="management-details">Дата: 2025-11-15 - 13/30 Волонтерів</p>
+                        </div>
+                        
+                        <div class="management-buttons">
+                            <button class="management-btn btn-light-purple" id="openApplicationsModal">Редагувати</button>
+                            <button class="management-btn btn-dark-purple icon-people" id="openManagerModal">
+                                <img src="img/люди.png" height="20px" width="20px" alt="">Керувати
+                            </button>
+                            <button class="management-btn btn-red-filled">Видалити</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="create" class="tab-content">
+                    <h2>Створити подію</h2>
+                    <form class="create-event-form">
+                        
+                        <div class="input-group full-width">
+                            <label for="event-name">Назва події:</label>
+                            <input type="text" id="event-name">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="event-date">Дата</label>
+                                <input type="text" id="event-date" placeholder="місяць/день/рік">
+                            </div>
+                            <div class="input-group">
+                                <label for="event-location">Місце</label>
+                                <input type="text" id="event-location">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="event-type">Тип (напр. Екологія)</label>
+                                <input type="text" id="event-type">
+                            </div>
+                            <div class="input-group">
+                                <label for="event-volunteers">Потрібно волонтерів</label>
+                                <input type="number" id="event-volunteers">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group full-width">
+                            <label for="event-comment">Коментар:</label>
+                            <textarea id="event-comment" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-event-button">Створити</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 ДоброДій Всі права захищено.</p>
+        <p>Прототип інтерфейсу</p>
+    </footer>
+    
+    <div id="applicationsModal" class="modal-overlay-applications">
+        <div class="modal-content-applications">
+            
+            <h3 class="modal-title">Заявки на подію: Допомога притулку для тварин</h3>
+            <span class="close-button-applications">&times;</span>
+
+            <div class="applications-list">
+                <div class="application-card">
+                    <div class="volunteer-info">
+                        <div class="volunteer-avatar-placeholder">
+                            <img src="img/аватар.png" alt="Олена Петренко" class="volunteer-avatar">
+                        </div>
+                        <div class="volunteer-details">
+                            <span class="volunteer-name">Олена Петренко</span>
+                            <span class="volunteer-rating-text">Рейтинг: 150</span>
+                        </div>
+                    </div>
+                    
+                    <div class="application-actions">
+                        <button class="app-btn app-reject">Відхилити</button>
+                        <button class="app-btn app-approve">Підтвердити</button>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="volunteer-info">
+                        <div class="volunteer-avatar-placeholder">
+                            <img src="img/аватар.png" alt="Олена Петренко" class="volunteer-avatar">
+                        </div>
+                        <div class="volunteer-details">
+                            <span class="volunteer-name">Олена Петренко</span>
+                            <span class="volunteer-rating-text">Рейтинг: 150</span>
+                        </div>
+                    </div>
+                    
+                    <div class="application-actions">
+                        <button class="app-btn app-reject">Відхилити</button>
+                        <button class="app-btn app-approve">Підтвердити</button>
+                    </div>
+                </div>
+                
+                <div class="application-card">
+                    <div class="volunteer-info">
+                        <div class="volunteer-avatar-placeholder">
+                            <img src="img/аватар.png" alt="Олена Петренко" class="volunteer-avatar">
+                        </div>
+                        <div class="volunteer-details">
+                            <span class="volunteer-name">Олена Петренко</span>
+                            <span class="volunteer-rating-text">Рейтинг: 150</span>
+                        </div>
+                    </div>
+                    
+                    <div class="application-actions">
+                        <button class="app-btn app-reject">Відхилити</button>
+                        <button class="app-btn app-approve">Підтвердити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

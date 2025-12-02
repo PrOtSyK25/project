@@ -1,0 +1,620 @@
+/* ======================================= */
+/* ====== 1. ЗАГАЛЬНІ СТИЛІ ТА СКИНАННЯ ====== */
+/* ======================================= */
+body {
+  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* --------------------------------- */
+/* --- 2. СТИЛІ ШАПКИ (HEADER) --- */
+/* --------------------------------- */
+.header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; 
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+    margin-right: 30px; 
+}
+/* НАВІГАЦІЯ В ШАПЦІ */
+.main-nav {
+    display: flex; 
+    gap: 15px; 
+    margin-right: auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #797979; 
+    font-size: 16px;
+    padding: 5px 0;
+    cursor: default; 
+    outline: none; 
+    user-select: none; 
+    border-bottom: 2px solid transparent; 
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.nav-link.current {
+    color: #4b4b4b; 
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #4a689d; 
+    border-bottom-color: #4a689d; 
+}
+
+/* ІНФОРМАЦІЯ ТА ДІЇ КОРИСТУВАЧА */
+.user-profile {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.action-link-icon {
+    text-decoration: none; 
+    cursor: pointer; 
+    color: inherit; 
+    display: flex;
+    align-items: center;
+}
+
+.action-icon-img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    filter: invert(30%) sepia(50%) saturate(100%) hue-rotate(200deg); 
+}
+
+.user-avatar-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc; 
+}
+
+
+/* ----------------------------------- */
+/* --- 3. ЛЕЙАУТ КАБІНЕТУ --- */
+/* ----------------------------------- */
+.main-content {
+    padding-top: 30px;
+}
+
+.cabinet-layout {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 50px;
+    align-items: flex-start; 
+}
+
+.cabinet-tabs {
+    flex-grow: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cabinet-tabs h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* ----------------------------------- */
+/* --- 4. БІЧНЕ МЕНЮ (SIDEBAR) --- */
+/* ----------------------------------- */
+.sidebar {
+    flex: 0 0 250px; 
+    background-color: white;
+    border-radius: 8px; 
+    height: fit-content; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px 0; 
+}
+
+.cabinet-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    margin: 5px 0; 
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s, color 0.3s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab-link:hover {
+    background-color: #f0f0f5; 
+}
+
+/* СТИЛЬ АКТИВНОЇ ВКЛАДКИ */
+.tab-link.active {
+    background-color: #ede9fe; 
+    color: #4F46E5; /* Єдиний темно-фіолетовий колір тексту */
+    border-radius: 6px; 
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 15px; 
+}
+
+/* Іконки в меню */
+.tab-link img {
+    width: 20px;  
+    height: 20px;
+    margin-right: 10px; 
+    flex-shrink: 0; 
+    transition: filter 0.3s ease; 
+}
+
+/* 1. СТИЛЬ НЕАКТИВНОЇ ІКОНКИ */
+.tab-link:not(.active) img {
+    filter: grayscale(100%) brightness(0.5); 
+}
+
+/* 2. СТИЛЬ АКТИВНОЇ ІКОНКИ (ФІОЛЕТОВИЙ #4F46E5) */
+.tab-link.active img {
+    filter: invert(27%) sepia(85%) saturate(2200%) hue-rotate(240deg) brightness(1.1);
+}
+
+
+/* Стилі для прихованого/видимого контенту */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+
+/* ----------------------------------- */
+/* --- 5. СТИЛІ СТАТИСТИКИ (Вкладка 1) --- */
+/* ----------------------------------- */
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: white; 
+    border: 1px solid #eee; 
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); 
+    min-width: 120px;
+
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+/* Контейнер для іконки (фіолетовий фон) */
+.stat-icon-container {
+    background-color: #e6e6fa; 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin-bottom: 15px;
+    width: 35px; 
+    height: 35px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стиль для IMG-іконок всередині контейнера */
+.stat-icon-img {
+    width: 100%; 
+    height: 100%; 
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: #666; 
+    margin-bottom: 5px; 
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px; 
+    font-weight: 700;
+    color: #333; 
+    margin-bottom: 0;
+}
+
+.stat-details, .stat-reviews {
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.stat-detail-header {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.stat-detail-text {
+    font-size: 16px; 
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px; 
+}
+
+.review-count {
+    font-size: 20px; 
+    font-weight: 700;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* КАРТКИ ВІДГУКІВ */
+.stat-reviews {
+    padding: 10px 15px; 
+}
+
+.review-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #dcdcdc; 
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; 
+    flex-shrink: 0; 
+    margin-right: 15px;
+}
+
+.review-content {
+    flex-grow: 1; 
+    margin-right: 15px;
+}
+
+.review-name {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #666;
+    margin: 3px 0 0 0; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.review-rating {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    flex-shrink: 0; 
+}
+
+
+/* ----------------------------------- */
+/* --- 6. СТИЛІ КЕРУВАННЯ ПОДІЯМИ (Вкладка 2) --- */
+/* ----------------------------------- */
+.event-management-card {
+    display: block; 
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.management-buttons {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px;
+    margin-top: 15px;
+    white-space: nowrap; 
+}
+
+.management-btn {
+    border: none; 
+    color: white; 
+    padding: 8px 12px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    position: relative;
+    text-align: center;
+    
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.management-btn img {
+    filter: brightness(0) invert(1); 
+    margin-right: 5px; 
+    width: 16px; 
+    height: 16px;
+}
+
+.btn-light-purple {
+    background-color: #e6e6fa; 
+    color: #5d5dd8; 
+}
+.btn-light-purple img {
+    filter: none;
+}
+
+.btn-dark-purple {
+    background-color: #5d5dd8;
+    color: white;
+}
+
+.btn-red-filled {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+
+/* ----------------------------------- */
+/* --- 7. СТИЛІ СТВОРЕННЯ ПОДІЇ (Вкладка 3) --- */
+/* ----------------------------------- */
+.create-event-form {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* ОСНОВНА ЛОГІКА: Label над Input (ВЕРТИКАЛЬНА) */
+.input-group {
+    display: block; 
+    margin-bottom: 20px;
+    flex: 1 1 0%; 
+}
+
+.input-group label {
+    display: block; 
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px; 
+    margin-right: 0; 
+    text-align: left; 
+    min-width: auto;
+    width: auto;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%; 
+    flex-grow: 0; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 0; 
+}
+
+.form-row .input-group {
+    flex: 1; 
+    display: block;
+}
+
+.submit-event-button {
+    background-color: #5d5dd8;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+
+/* --------------------------------- */
+/* --- 8. СТИЛІ ПІДВАЛУ (FOOTER) --- */
+/* --------------------------------- */
+.footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: auto; 
+}
+
+
+/* ======================================= */
+/* ====== СТИЛІ МОДАЛЬНОГО ВІКНА ЗАЯВОК (ФИКС ЦЕНТРИРОВАНИЯ) ====== */
+/* ======================================= */
+
+.modal-overlay-applications {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3); 
+    
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-overlay-applications.open {
+    display: flex; 
+}
+
+.modal-content-applications {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 650px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: auto; 
+}
+
+.close-button-applications {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* СТИЛІ КАРТОК ВОЛОНТЕРІВ */
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.application-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #dcdcdc; 
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: white;
+}
+
+.volunteer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.volunteer-avatar-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.volunteer-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.volunteer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.volunteer-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.volunteer-rating-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.application-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.app-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    font-weight: 600;
+}
+
+.app-reject {
+    background-color: #f7e0e4; 
+    color: #ff4d4f; 
+}
+
+.app-approve {
+    background-color: #e5f5e5; 
+    color: #52c41a; 
+}

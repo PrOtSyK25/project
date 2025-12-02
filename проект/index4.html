@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій кабінет - ДоброДій</title>
+    <link rel="stylesheet" href="styles/styles4.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="index3.html" class="logo">ДоброДій</a> 
+            
+            <nav class="main-nav">
+                <a href="index3.html" class="nav-link">Каталог подій</a> 
+                <a href="#" class="nav-link current">Мій кабінет</a>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="index.html" class="action-link-icon" title="Вихід"><img src="img/вихід.png" class="action-icon-img" alt="Вихід"></a>
+                <span class="username">Марина</span>
+                <div class="user-avatar-small"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container cabinet-layout">
+            
+            <aside class="sidebar">
+                <nav class="cabinet-nav">
+                    <a href="#" class="tab-link active" data-tab="profile"><img src="img/люди.png" alt=""> Мій профіль</a>
+                    <a href="#" class="tab-link" data-tab="events"><img src="img/календарь.png" alt="">Мої події</a>
+                    <a href="#" class="tab-link" data-tab="ranks"><img src="img/зірочка.png" alt="">Мої ачівки</a>
+                    <a href="#" class="tab-link alert" data-tab="feedback"><img src="img/сповіщення.png" alt="">Сповіщення</a>
+                </nav>
+            </aside>
+
+            <div class="cabinet-tabs">
+
+                <div id="profile" class="tab-content active">
+                    <h2>Мій профіль</h2>
+                    <div class="profile-card">
+                        <div class="profile-avatar-placeholder"></div>
+                        <p class="description">Верифіковано через Дія/BankID</p>
+                        <div class="input-group">
+                            <label for="name-input">Ім'я</label>
+                            <input type="text" id="name-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="email-input">Email</label>
+                            <input type="email" id="email-input">
+                        </div>
+                        <button class="save-button">Зберегти зміни</button>
+                    </div>
+                </div>
+
+                <div id="events" class="tab-content">
+                    <h2>Мої події</h2>
+                    
+                    <div class="event-item-card">
+                        <div class="event-details">
+                            <h3 class="event-title">Назва події 1</h3>
+                            <p class="event-date">Дата: 2025-11-15</p>
+                        </div>
+                        <div class="event-actions">
+                            <span class="event-status status-confirmed">Підтверджено</span>
+                        </div>
+                    </div>
+
+                    <div class="event-item-card">
+                        <div class="event-details">
+                            <h3 class="event-title">Назва події 1</h3>
+                            <p class="event-date">Дата: 2025-11-15</p>
+                        </div>
+                        <div class="event-actions">
+                            <span class="event-status status-completed">Завершено</span>
+                            <button class="review-button" id="openReviewModal">Залишити відгук</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ranks" class="tab-content">
+                    <h2>Мої ачівки</h2>
+                    <div class="ranks-container">
+                        <button class="rank-button">Новачок</button>
+                        <button class="rank-button active-rank">Еко-герой</button>
+                    </div>
+                </div>
+
+                <div id="feedback" class="tab-content">
+                    <h2>Сповіщення</h2>
+                    <div class="notifications-container">
+                        <div class="notification notification-primary">
+                            Вашу участь в "Еко-толока" підтверджено!
+                        </div>
+                        <div class="notification notification-secondary">
+                            Ви отримали новий бейдж "Новачок"!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 ДоброДій Всі права захищено.</p>
+        <p>Прототип інтерфейсу</p>
+    </footer>
+
+    <div id="reviewModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-title">Відгук про подію: <span id="eventTitle">Назва події 1</span></h3>
+            <span class="close-button">&times;</span>
+
+            <form id="reviewForm">
+                <div class="rating-section">
+                    <label>Оцінка:</label>
+                    <div class="stars">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                    </div>
+                </div>
+
+                <div class="comment-section">
+                    <label for="comment">Коментар:</label>
+                    <textarea id="comment" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="modal-submit-button">Залишити відгук</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="scripts/script2.js"></script> 
+
+</body>
+</html>

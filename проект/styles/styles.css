@@ -1,0 +1,171 @@
+/* Общие стили и сброс */
+body {
+    font-family: sans-serif; /* Замените на нужный шрифт, если он указан в Figma */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Светлый фон для страницы */
+    color: #333;
+    display: flex; /* Для позиционирования футера внизу */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px; /* Ограничение ширины контента */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 1. Стили шапки (Header) --- */
+/* --- Оновлені стилі шапки (Header) --- */
+.header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content {
+    /* Використовуємо flexbox для вирівнювання елементів */
+    display: flex;
+    align-items: center; /* Вирівнювання по вертикалі */
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стилі для ЛОГОТИПУ */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5; /* Темно-синій/голубий колір, як на скріншоті */
+    text-decoration: none; /* Прибираємо підкреслення, якщо це посилання */
+    margin-right: 50px; /* Додаємо відступ після логотипу до меню */
+}
+
+/* Стилі для НАВІГАЦІЙНОГО МЕНЮ */
+/* Стилі для НАВІГАЦІЙНОГО МЕНЮ */
+.main-nav {
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-link {
+    text-decoration: none;
+    /* Змінюємо колір за замовчуванням на СВІТЛО-СІРИЙ (як "Головна") */
+    color: #888; /* Світліший сірий колір */
+    font-size: 16px;
+    padding: 5px 0;
+    
+    cursor: default; 
+    outline: none; 
+    user-select: none; 
+    
+    border-bottom: 2px solid transparent; 
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+/* Стиль для активного (поточного) елемента */
+.nav-link.current {
+    /* Робимо активний елемент ТЕМНО-СІРИМ (як "Мій кабінет") */
+    color: #333; 
+    font-weight: 500;
+}
+
+/* Ефект наведення (Hover) залишаємо, щоб він працював на неактивних посиланнях */
+.nav-link:hover {
+    color: #4a689d; 
+    border-bottom-color: #4a689d; 
+}
+
+/* Стилі для КНОПКИ (якщо вона знаходиться значно правіше) */
+/* Стилі для КНОПКИ (action-button) */
+.action-button {
+    background-color: #5d5dd8; /* Фіoлетова кнопка */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: auto; 
+    
+    /* --- ВИПРАВЛЕННЯ КУРСОРА І ФОКУСУ --- */
+    outline: none; /* Видаляє стандартну рамку фокусу (яка може бути на кнопці) */
+    user-select: none; /* Забороняє виділення тексту */
+    cursor: pointer; /* Залишаємо курсор-руку, бо це кнопка */
+    text-decoration: none; /* Видаляє підкреслення */
+
+}
+
+.action-button:hover {
+    background-color: #4e4ecf;
+}
+
+/* --- 2. Стили основного контента (Main) --- */
+.main-content {
+    flex-grow: 1; /* Занимает все доступное вертикальное пространство */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирование по вертикали */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.login-box h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.login-box .subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Расстояние между кнопками */
+}
+
+.btn {
+    width: 300px; /* Фиксированная ширина для кнопок */
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    text-decoration: none; /* Прибирає підкреслення посилання */
+    display: inline-block; /* Дозволяє застосовувати ширину і відступи до посилання */
+}
+
+.btn-primary {
+    background-color: #5d5dd8; /* Фиолетовая заливка */
+    color: white;
+    border: 1px solid #5d5dd8;
+}
+
+.btn-primary:hover {
+    background-color: #4e4ecf;
+    border-color: #4e4ecf;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #5d5dd8; /* Фиолетовый текст */
+    border: 1px solid #5d5dd8; /* Фиолетовая обводка */
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0ff; /* Слегка светлый фон при наведении */
+}
+
+/* --- 3. Стили подвала (Footer) --- */
+.footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модерація користувачів - Адмін</title>
+    <link rel="stylesheet" href="styles/styles8.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="index12.html" class="logo">ДоброДій</a> 
+            <nav class="main-nav">
+                <a href="index12.html" class="nav-link">Каталог подій</a> 
+                <a href="#" class="nav-link">Мій кабінет</a>
+            </nav>
+            <div class="user-profile"> 
+                <a href="index.html" class="action-link-icon" title="Вихід">
+                    <img src="img/вихід.png" class="action-link-icon" alt=""> 
+                </a> 
+                <span class="username">Адмін</span>
+                <div class="user-avatar-small"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container cabinet-layout">
+            
+            <aside class="sidebar">
+                <nav class="cabinet-nav">
+                    <a href="#" class="tab-link active mod-users" data-tab="users">
+                        <img src="img/модерація користувачів.png" class="menu-icon-img" alt="Модерація"> Модерація користувачів
+                    </a>
+                    <a href="#" class="tab-link mod-events" data-tab="events">
+                        <img src="img/модерація подій.png" class="menu-icon-img" alt="Події"> Модерація подій
+                    </a>
+                </nav>
+            </aside>
+
+            <div class="cabinet-tabs">
+                
+                <div id="users" class="tab-content active">
+                    <h2 class="mod-title">Модерація користувачів</h2>
+                    <p class="mod-subtitle">Користувачі, що потребують ручної перевірки.</p>
+                    
+                    <div class="moderation-card">
+                        <div class="user-details-mod">
+                            <div class="user-avatar-mod">
+                                <img src="img/аватар.png" alt="Ірина А" class="mod-avatar">
+                            </div>
+                            <div class="user-text-mod">
+                                <span class="mod-name">Ірина А</span>
+                                <p class="mod-ip-reason">
+                                    IP: 192.168.1.1 | Причина: Дублікат IP
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mod-actions">
+                            <button class="mod-btn btn-mod-reject">Заблокувати</button>
+                            <button class="mod-btn btn-mod-approve">Підтвердити</button>
+                        </div>
+                    </div>
+
+                    <div class="moderation-card">
+                        <div class="user-details-mod">
+                            <div class="user-avatar-mod">
+                                <img src="img/аватар.png" alt="Ірина Б" class="mod-avatar">
+                            </div>
+                            <div class="user-text-mod">
+                                <span class="mod-name">Ірина Б</span>
+                                <p class="mod-ip-reason">
+                                    IP: 192.168.1.2 | Причина: Підозріла активність
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mod-actions">
+                            <button class="mod-btn btn-mod-reject">Заблокувати</button>
+                            <button class="mod-btn btn-mod-approve">Підтвердити</button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div id="events" class="tab-content">
+                    <h2>Модерація подій</h2>
+                    <p class="mod-subtitle">Події, що очікують на затвердження.</p>
+
+                    <div class="moderation-card event-moderation-card">
+                        <div class="event-mod-details">
+                            <p class="event-mod-forum">Форум "Цифрова Трансформація України"</p>
+                            <p class="event-mod-organizer">Організатор: Неперевірений Організатор | 2025-12-01</p>
+                        </div>
+                        <div class="mod-actions">
+                            <button class="mod-btn btn-mod-reject">Заблокувати</button>
+                            <button class="mod-btn btn-mod-approve">Підтвердити</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 ДоброДій Всі права захищено.</p>
+        <p>Прототип інтерфейсу</p>
+    </footer>
+    
+    <script src="scripts/script4.js"></script>
+
+</body>
+</html>
